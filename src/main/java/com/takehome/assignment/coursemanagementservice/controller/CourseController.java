@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/course")
@@ -49,7 +50,7 @@ public class CourseController {
 
     //get all students in a course using course id
     @GetMapping("/student-list-by-course/{courseId}")
-    public List<Student> getStudentListOfCourse(@PathVariable String courseId) {
+    public Set<Student> getStudentListOfCourse(@PathVariable String courseId) {
         return courseService.getStudentList(courseId);
     }
 

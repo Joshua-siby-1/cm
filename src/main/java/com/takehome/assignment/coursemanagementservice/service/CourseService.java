@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class CourseService {
@@ -39,8 +40,8 @@ public class CourseService {
         courseRepository.deleteById(id);
     }
 
-    public List<Student> getStudentList(String courseId) {
-        List<Student> studentList = courseRepository.getById(courseId).getStudents();
+    public Set<Student> getStudentList(String courseId) {
+        Set<Student> studentList = courseRepository.getById(courseId).getStudents();
         return studentList;
     }
 

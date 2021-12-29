@@ -3,7 +3,7 @@ package com.takehome.assignment.coursemanagementservice.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Course {
@@ -18,12 +18,12 @@ public class Course {
             joinColumns={@JoinColumn(name="course_id")},
             inverseJoinColumns={@JoinColumn(name="student_id")})
     @JsonIgnore
-    private List<Student> students;
+    private Set<Student> students;
 
     public Course() {
     }
 
-    public Course(String courseId, String courseName, int credits, String instructorName, List<Student> students) {
+    public Course(String courseId, String courseName, int credits, String instructorName, Set<Student> students) {
         this.courseId = courseId;
         this.courseName = courseName;
         this.credits = credits;
@@ -63,11 +63,11 @@ public class Course {
         this.instructorName = instructorName;
     }
 
-    public List<Student> getStudents() {
+    public Set<Student> getStudents() {
         return students;
     }
 
-    public void setStudents(List<Student> students) {
+    public void setStudents(Set<Student> students) {
         this.students = students;
     }
 }

@@ -43,7 +43,7 @@ public class StudentController {
     }
 
     @GetMapping("/course-list-by-student/{studentId}")
-    public List<Course> getCourseListByStudent(@PathVariable String studentId) {
+    public Set<Course> getCourseListByStudent(@PathVariable String studentId) {
         return studentService.getCoursesByStudentId(studentId);
     }
 }

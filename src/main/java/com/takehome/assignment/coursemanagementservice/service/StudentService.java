@@ -34,8 +34,8 @@ public class StudentService {
     public void deleteStudent(String id) {
         studentRepository.deleteById(id);
     }
-    public List<Course> getCoursesByStudentId(String studentId) {
-        List<Course> courseList = studentRepository.findById(studentId).get().getCourses();
+    public Set<Course> getCoursesByStudentId(String studentId) {
+        Set<Course> courseList = studentRepository.findById(studentId).get().getCourses();
         return courseList;
     }
 }

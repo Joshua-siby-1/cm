@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Student {
@@ -17,12 +17,12 @@ public class Student {
     private int enrollmentNo;
     @ManyToMany(fetch = FetchType.LAZY, mappedBy = "students")
     @JsonIgnore
-    private List<Course> courses;
+    private Set<Course> courses;
 
     public Student() {
     }
 
-    public Student(String studentId, String firstName, String lastName, Date dateOfBirth, int enrollmentNo, List<Course> courses) {
+    public Student(String studentId, String firstName, String lastName, Date dateOfBirth, int enrollmentNo, Set<Course> courses) {
         this.studentId = studentId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -71,11 +71,11 @@ public class Student {
         this.enrollmentNo = enrollmentNo;
     }
 
-    public List<Course> getCourses() {
+    public Set<Course> getCourses() {
         return courses;
     }
 
-    public void setCourses(List<Course> courses) {
+    public void setCourses(Set<Course> courses) {
         this.courses = courses;
     }
 }
