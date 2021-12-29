@@ -46,7 +46,10 @@ public class CourseService {
     }
 
     public void registerStudent(String courseId, String studentId) {
+        System.out.println("ids are" + courseId + studentId);
         Course course = courseRepository.getById(courseId);
+        System.out.println(course.toString());
+        System.out.println(studentRepository.getById(studentId).toString());
         course.getStudents().add(studentRepository.getById(studentId));
         courseRepository.save(course);
     }
