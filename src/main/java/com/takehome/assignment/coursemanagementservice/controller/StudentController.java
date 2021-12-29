@@ -42,7 +42,7 @@ public class StudentController {
         studentService.deleteStudent(id);
     }
 
-    @GetMapping("/course-list-by-stdent/{studentId}")
+    @GetMapping("/course-list-by-student/{studentId}")
     public List<Course> getCourseListByStudent(@PathVariable String studentId) {
         return studentService.getCoursesByStudentId(studentId);
     }
